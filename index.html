@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap - Always.Bank</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sitemap — Always.Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
     <style>
         :root {
             --bg: #0a0e1a;
@@ -23,7 +25,9 @@
             --tag-bg: rgba(37, 99, 235, 0.15);
         }
 
-        * {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -37,7 +41,7 @@
             line-height: 1.6;
         }
 
-        /* Hero Section */
+        /* ── HERO ── */
         .hero {
             background: linear-gradient(135deg, #0a0e1a 0%, #0d1b3e 50%, #0a0e1a 100%);
             border-bottom: 1px solid var(--border);
@@ -100,15 +104,14 @@
             color: var(--accent2);
             font-weight: 500;
             text-decoration: none;
-            transition: all .2s;
+            transition: border-color .2s;
         }
 
         .hero-url:hover {
             border-color: var(--accent2);
-            box-shadow: 0 0 20px var(--accent-glow);
         }
 
-        /* Stats Bar */
+        /* ── STATS BAR ── */
         .stats {
             display: flex;
             justify-content: center;
@@ -136,14 +139,14 @@
             letter-spacing: .06em;
         }
 
-        /* Layout */
+        /* ── LAYOUT ── */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 48px 24px;
         }
 
-        /* Section Headings */
+        /* ── SECTION HEADINGS ── */
         .section-title {
             display: flex;
             align-items: center;
@@ -167,24 +170,24 @@
             flex-shrink: 0;
         }
 
-        /* Tree Sections */
+        /* ── TREE ── */
         .tree {
             margin-bottom: 56px;
         }
 
         .tree-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 16px;
         }
 
-        /* Cards */
+        /* ── CARD ── */
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
-            transition: all .2s;
+            transition: border-color .2s, transform .2s, box-shadow .2s;
         }
 
         .card:hover {
@@ -221,14 +224,12 @@
         .card-url {
             font-size: 11px;
             color: var(--muted);
-            font-family: monospace;
         }
 
         .card-body {
             padding: 14px 18px;
         }
 
-        /* Item Lists */
         .item-list {
             list-style: none;
             display: flex;
@@ -252,7 +253,7 @@
             margin-top: 1px;
         }
 
-        /* CTA Tags */
+        /* ── CTA TAGS ── */
         .cta-list {
             display: flex;
             flex-wrap: wrap;
@@ -270,66 +271,236 @@
             font-weight: 600;
             border: 1px solid;
             cursor: default;
+            transition: opacity .2s;
         }
 
-        .cta-primary { background: rgba(37, 99, 235, .15); border-color: rgba(37, 99, 235, .45); color: #93c5fd; }
-        .cta-green { background: rgba(16, 185, 129, .12); border-color: rgba(16, 185, 129, .4); color: #6ee7b7; }
-        .cta-amber { background: rgba(245, 158, 11, .12); border-color: rgba(245, 158, 11, .4); color: #fcd34d; }
-        .cta-purple { background: rgba(139, 92, 246, .12); border-color: rgba(139, 92, 246, .4); color: #c4b5fd; }
-        .cta-cyan { background: rgba(6, 182, 212, .12); border-color: rgba(6, 182, 212, .4); color: #a5f3fc; }
+        .cta-tag:hover {
+            opacity: .8;
+        }
 
-        /* Colors */
-        .c-blue { background: rgba(37, 99, 235, .15); color: #2563eb; }
-        .c-green { background: rgba(16, 185, 129, .12); color: #10b981; }
-        .c-amber { background: rgba(245, 158, 11, .12); color: #f59e0b; }
-        .c-purple { background: rgba(139, 92, 246, .12); color: #8b5cf6; }
-        .c-cyan { background: rgba(6, 182, 212, .12); color: #06b6d4; }
+        .cta-primary {
+            background: rgba(37, 99, 235, .15);
+            border-color: rgba(37, 99, 235, .45);
+            color: #93c5fd;
+        }
 
-        footer {
+        .cta-green {
+            background: rgba(16, 185, 129, .12);
+            border-color: rgba(16, 185, 129, .4);
+            color: #6ee7b7;
+        }
+
+        .cta-amber {
+            background: rgba(245, 158, 11, .12);
+            border-color: rgba(245, 158, 11, .4);
+            color: #fcd34d;
+        }
+
+        .cta-purple {
+            background: rgba(139, 92, 246, .12);
+            border-color: rgba(139, 92, 246, .4);
+            color: #c4b5fd;
+        }
+
+        .cta-cyan {
+            background: rgba(6, 182, 212, .12);
+            border-color: rgba(6, 182, 212, .4);
+            color: #a5f3fc;
+        }
+
+        /* ── FLOW DIAGRAM ── */
+        .flow {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 24px;
+            margin-bottom: 56px;
+        }
+
+        .flow-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flow-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .flow-box {
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: .82rem;
+            font-weight: 600;
             text-align: center;
-            padding: 48px 24px;
-            color: var(--muted);
-            font-size: 13px;
-            border-top: 1px solid var(--border);
+            min-width: 110px;
+            border: 1px solid;
         }
+
+        .flow-root {
+            background: rgba(37, 99, 235, .2);
+            border-color: var(--accent);
+            color: #93c5fd;
+        }
+
+        .flow-l1 {
+            background: rgba(16, 185, 129, .15);
+            border-color: var(--green);
+            color: #6ee7b7;
+        }
+
+        .flow-l2 {
+            background: rgba(30, 42, 69, .9);
+            border-color: var(--border);
+            color: var(--muted);
+            font-size: .75rem;
+            font-weight: 500;
+        }
+
+        .flow-children {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        /* ── LEGEND ── */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 16px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+        }
+
+        /* ── COLORS PER SECTION ── */
+        .c-blue { background: rgba(37, 99, 235, .15); }
+        .c-green { background: rgba(16, 185, 129, .12); }
+        .c-amber { background: rgba(245, 158, 11, .12); }
+        .c-purple { background: rgba(139, 92, 246, .12); }
+        .c-cyan { background: rgba(6, 182, 212, .12); }
+
+        .bc-blue { border-color: rgba(37, 99, 235, .5) !important; }
+        .bc-green { border-color: rgba(16, 185, 129, .45) !important; }
+        .bc-amber { border-color: rgba(245, 158, 11, .45) !important; }
+        .bc-purple { border-color: rgba(139, 92, 246, .45) !important; }
+        .bc-cyan { border-color: rgba(6, 182, 212, .45) !important; }
 
         @media (max-width: 600px) {
             .stats { gap: 20px; }
-            .tree-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
+
 <body>
 
     <header class="hero">
         <div class="hero-badge">🗺️ Sitemap</div>
         <h1>Always.Bank</h1>
-        <p>Complete website mapping including internal pages, services, navigation, and CTA strategy.</p>
-        <a class="hero-url" href="https://www.always.bank" target="_blank">🔗 www.always.bank</a>
+        <p>Complete website structure, navigation, sections, pages, and all CTAs.</p>
+        <a class="hero-url" href="https://www.always.bank" target="_blank">
+            🔗 www.always.bank
+        </a>
     </header>
 
     <div class="stats">
-        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Main Menus</div></div>
-        <div class="stat"><div class="stat-num">14</div><div class="stat-label">Total Pages</div></div>
-        <div class="stat"><div class="stat-num">12</div><div class="stat-label">Unique CTAs</div></div>
-        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Social Platforms</div></div>
+        <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Main Menus</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">12</div>
+            <div class="stat-label">Pages</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">10</div>
+            <div class="stat-label">Unique CTAs</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">6</div>
+            <div class="stat-label">Forms</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Social Media</div>
+        </div>
     </div>
 
     <div class="container">
 
+        <div class="legend">
+            <strong style="color:#fff; margin-right:4px;">CTA Legend:</strong>
+            <span><span class="legend-dot" style="background:#2563eb;"></span>Primary / Get Started</span>
+            <span><span class="legend-dot" style="background:#10b981;"></span>Form / Notification</span>
+            <span><span class="legend-dot" style="background:#f59e0b;"></span>Access / Login</span>
+            <span><span class="legend-dot" style="background:#8b5cf6;"></span>Informative</span>
+            <span><span class="legend-dot" style="background:#06b6d4;"></span>Legal / Support</span>
+        </div>
+
         <div class="tree">
             <div class="section-title">
-                <div class="icon c-blue" style="border:1px solid rgba(37,99,235,0.4);">🌐</div> 1. Navigation Menus
+                <div class="icon c-blue bc-blue" style="border:1px solid;">🌐</div>
+                1. Hierarchical Site Structure
             </div>
-            <div class="tree-grid">
-                <div class="card" style="border-color: rgba(37,99,235,0.4);">
-                    <div class="card-header"><div class="card-title">Main Navigation</div></div>
-                    <div class="card-body">
-                        <ul class="item-list">
-                            <li>Loans (Dropdown)</li>
-                            <li>Banking (Dropdown)</li>
-                            <li>Learn (Dropdown)</li>
-                        </ul>
+            <div class="flow">
+                <div class="flow-row" style="justify-content:center; gap:0; margin-bottom: 20px;">
+                    <div class="flow-node">
+                        <div class="flow-box flow-root">🏛️ always.bank</div>
                     </div>
                 </div>
-                <div class="card" style="border-color: rgba(37,99,235,0.4);">
+
+                <div style="display:flex; justify-content:center; gap: 32px; flex-wrap: wrap; align-items:flex-start;">
+
+                    <div class="flow-node">
+                        <div class="flow-box flow-l1">💰 Loans</div>
+                        <div class="flow-children">
+                            <div class="flow-box flow-l2">Traditional Loans</div>
+                            <div class="flow-box flow-l2">└ Term Loans</div>
+                            <div class="flow-box flow-l2">└ Lines of Credit</div>
+                            <div class="flow-box flow-l2">Gov. Guaranteed</div>
+                            <div class="flow-box flow-l2">└ SBA Loans</div>
+                            <div class="flow-box flow-l2">└ USDA Loans</div>
+                            <div class="flow-box flow-l2">Specialty Finance</div>
+                            <div class="flow-box flow-l2">└ Invoice Factoring</div>
+                            <div class="flow-box flow-l2">└ Asset-Based Lending</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-node">
+                        <div class="flow-box flow-l1"
+                            style="background:rgba(139,92,246,.15);border-color:#8b5cf6;color:#c4b5fd;">🏦 Banking</div>
+                        <div class="flow-children">
+                            <div class="flow-box flow-l2">Business</div>
+                            <div class="flow-box flow-l2">└ Always Business Banking</div>
+                            <div class="flow-box flow-l2">Personal</div>
+                            <div class="flow-box flow-l2">└ Always Personal Banking</div>
+                            <div class="flow-box flow-l2">└ Always Savings Account</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-node">
+                        <div class="flow-box flow-l1"
+                            style="background:rgba(245,158,11,.15);border-color:#f59e0b;color:#fcd34d;">📚 Learn</div>
